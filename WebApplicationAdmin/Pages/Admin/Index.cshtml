@@ -1,0 +1,15 @@
+﻿@page
+@model WebApplicationAdmin.Pages.Admin.IndexModel
+@{
+    ViewData["Title"] = "Panel administracyjny";
+}
+
+<h1>Panel administracyjny</h1>
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <p>Witamy w panelu administracyjnym!</p>
+}
+else
+{
+    <p>Nie masz uprawnień do dostępu do tej strony.</p>
+}
